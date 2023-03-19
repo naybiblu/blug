@@ -17,7 +17,8 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="aspect-square h-full bg-blue-500 drop-shadow-2xl rounded-sm relative
-    flex flex-col {determinePos(pos)}" on:click={moveScript(pos)}>
+    flex flex-col {determinePos(pos)}
+    xs:w-full" on:click={moveScript(pos)}>
     <img src={img}
         class="absolute h-full w-full z-10" alt="it">
     <div class="bg-gradient-to-tr absolute h-full w-full from-black z-20"></div>
