@@ -9,6 +9,16 @@ export default ({ mode }: any) => {
 		plugins: [sveltekit()],
 		ssr: {
 			external: Object.keys(pkg.dependencies || {})
-		}
+		},
+		resolve: {
+      alias: {
+        $ttf: resolve('./static/ttf')
+      }
+    },
+    server: {
+      fs: {
+        allow: ['..'],
+      },
+    }
 	});
 };
