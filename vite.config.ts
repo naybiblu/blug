@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import pkg from './package.json' assert { type: 'json' };
 import { defineConfig, loadEnv } from 'vite';
+import { resolve } from 'path';
 
 /** @type {import('vite').UserConfig} */
 export default ({ mode }: any) => {
