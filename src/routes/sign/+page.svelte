@@ -16,6 +16,10 @@
 	}
 </style>
 
+<svelte:head>
+    <title>[Sign {logIn ? "in" : "up"}] Blug With Naybiblu</title>
+</svelte:head>
+
 <div class="h-screen w-full flex overflow-hidden">
 	<div class="h-full w-full relative">
 		<div class="h-full w-full absolute bg-gradient-to-tr from-[#1c1c1c] z-10"></div>
@@ -30,7 +34,7 @@
 		<div class="flex flex-col h-full gap-8 text-white z-30 pl-20 justify-center relative">
 			<div class="flex flex-col gap-5">
 				<p class="opacity-60 tracking-[0.5rem] flex flex-row gap-3 items-center">
-					<a href="/">
+					<a href="/home">
 						<img src="svg/arrow.svg" alt="back" class="rotate-90 h-5 invert opacity-60
 							hover:opacity-100">	
 					</a>

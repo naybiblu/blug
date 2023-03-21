@@ -2,13 +2,13 @@
     import "../app.css";
     import TopNav from '$lib/components/TopNav.svelte';
     import { page } from '$app/stores';
-    let current = $page.url.pathname;
+    $: current = $page.url.pathname;
 </script>
 
 {#if current !== "/sign"}
     <TopNav/>
-    <main class="flex {current === "/" ? "" : "mt-[4.6rem]"}
-        w-full h-full z-0 overflow-x-hidden overflow-y-auto flex flex-col relative">
+    <main class="mt-[4.6rem] w-full h-full z-0 overflow-x-hidden overflow-y-auto flex flex-col relative
+        xs:mt-0">    
         <slot/>
     </main>
 {:else}

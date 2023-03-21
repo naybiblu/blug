@@ -4,8 +4,9 @@
 </script>
 
 <section class="w-full h-[4.5rem] flex fixed top-0 left-0 items-center px-20 justify-between bg-[#1c1c1c]
-    shadow-lg z-50">
-    <a href="/" class="w-max h-max">
+    shadow-lg z-50
+    xs:hidden">
+    <a href="/home" class="w-max h-max">
         <div class="flex gap-3 items-center font-extrabold">
             <img src="png/icon.png" alt="hisvelte" class="h-16 brightness-0 invert"/>
             <p class="flex flex-col font-[Bold]">
@@ -28,9 +29,9 @@
         </button>
     </form>
     <div class="flex gap-5 items-center justify-center">
-        <a href="/ask" class="h-10">
+        <a href="/sign" class="h-10">
            <button class="bg-amber-700 h-full px-8 rounded-full font-bold
-           hover:bg-[#39393f]">Sign in</button> 
+           hover:bg-[#39393f]">Sign in/up</button> 
         </a>
         <img src="png/icon.png" alt="user" class="h-12 rounded-full invert"/>
     </div>
