@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-    <title>Blug With Naybiblu</title>
+    <title>Blug with Naybiblu</title>
 </svelte:head>
 
 <section class="h-[88.3vh] w-full flex justify-center overflow-hidden">

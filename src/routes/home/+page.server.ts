@@ -1,9 +1,6 @@
-import { fetchMarkdownPosts } from '$lib/helpers/converter';
-
-const mdFiles = Object.keys(import.meta.glob('$lib/posts/*.md')).map((k) => k.replace('/src/lib/posts/', ""));
+import { filterPosts } from '$lib/metadata/blog/posts'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-    
-    console.log(fetchMarkdownPosts())
+    console.log(filterPosts(true));
 }

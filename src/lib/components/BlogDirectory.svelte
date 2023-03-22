@@ -32,7 +32,7 @@
     ];
 </script>
 
-<div class="flex flex-col w-5/6 gap-5 py-10">
+<div class="flex flex-col w-full gap-5">
     {#each sample as s, i}
         <div class="p-5 h-[11.5rem] w-full bg-[#39393f] rounded-xl flex flex-row gap-10 relative">
             <img src={s.img} alt={s.title.toLowerCase().replace(" ", "-")}

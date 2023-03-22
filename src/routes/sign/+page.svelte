@@ -17,7 +17,7 @@
 </style>
 
 <svelte:head>
-    <title>[Sign {logIn ? "in" : "up"}] Blug With Naybiblu</title>
+    <title>[Sign {logIn ? "in" : "up"}] Blug with Naybiblu</title>
 </svelte:head>
 
 <div class="h-screen w-full flex overflow-hidden">

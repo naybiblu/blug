@@ -12,7 +12,7 @@
         let album = document.querySelector("#firstAlbum");
         setInterval(() => {
             timer++;
-            if (timer === 20) album!.innerHTML += "<div class='absolute z-40 h-6 w-6 animate-ping border-2 rounded-full'></div><div class='absolute z-40 h-3 w-3 animate-ping border-2 rounded-full'></div>";
+            if (timer === 20) album!.innerHTML += "<div class='absolute z-40 h-6 w-6 animate-ping border-2 rounded-full'></div><div class='absolute z-40 h-3 w-3 animate-ping border-2 rounded-full'></div><p class='bg-white opacity-60 text-black px-2 py-1 rounded-full absolute z-50 font-[Bold] text-xs animate-pulse'>click here</p>";
         }, 1000);
     });
 
