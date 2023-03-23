@@ -1,12 +1,19 @@
 <script lang="ts">
     import AlbumCover from "$lib/components/AlbumCover.svelte";
     import { categories } from "$lib/metadata/blog/categories";
+    import { filterPosts } from "$lib/metadata/blog/posts";
     import { fade } from 'svelte/transition';
     import { onMount } from "svelte";
+    import { categoryId } from '$lib/stores/misc';
 
     let sample = categories();
     let timer = 0;
-    $: first = sample[0];
+    let first: any, index: number;
+    $: {
+        first = sample[0];
+        index = categories().findIndex((c: any) => c.title === first.title);
+        if (first.title) categoryId.set(index);
+    }
 
     onMount(() => {
         let album = document.querySelector("#firstAlbum");
@@ -17,7 +24,6 @@
     });
 
     const move = (pos: any) => {
-        if (pos !== 0) return;
         timer = 0;
         let last = sample[sample.length - 1];
         sample = sample.filter((s: any, i: number) => i !== sample.length - 1);
@@ -32,7 +38,7 @@
         xs:w-[90%] xs:h-max">
         {#each sample.slice(0, 4) as s, i}
             <AlbumCover img={s.img} title={s.title} sub={s.sub} pos={i} moveScript={move}
-                blogCount={s.blogCount}/>
+                blogCount={filterPosts({ category: index }).length}/>
         {/each}
     </div>
     {#key first}
@@ -56,7 +62,8 @@
             <hr>
             <div class="flex flex-row justify-start items-center">
                 <a href="/search/{first.title.toLowerCase().replace(" ", "-")}"
-                    class="opacity-70 hover:opacity-100 flex flex-row gap-2 items-center justify-center">
+                    class="opacity-70 hover:opacity-100 flex flex-row gap-2 items-center justify-center 
+                    transition-opacity">
                     <img src="svg/arrow.svg" alt="arrow" class="invert h-5 rotate-180
                         xs:h-3">
                     <p class="font-[Bold] tracking-wider 

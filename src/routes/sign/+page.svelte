@@ -18,6 +18,7 @@
 
 <svelte:head>
     <title>[Sign {logIn ? "in" : "up"}] Blug with Naybiblu</title>
+	<link rel="icon" href="png/icon.png" />
 </svelte:head>
 
 <div class="h-screen w-full flex overflow-hidden">
@@ -36,7 +37,7 @@
 				<p class="opacity-60 tracking-[0.5rem] flex flex-row gap-3 items-center">
 					<a href="/home">
 						<img src="svg/arrow.svg" alt="back" class="rotate-90 h-5 invert opacity-60
-							hover:opacity-100">	
+							hover:opacity-100 transition-opacity">	
 					</a>
 					BLUG NI NAYBIBLU
 				</p>
@@ -76,14 +77,14 @@
 							<button on:click={togglePass2} type="button"
 								class="absolute right-5 h-5 bottom-5 invert opacity-60 z-50">
 								<img src="svg/{showPass2 ? "hide_eye" : "show_eye"}.svg" alt="show pass"
-									class="h-5 opacity-60 hover:opacity-100">
+									class="h-5 opacity-60 hover:opacity-100 transition-opacity">
 							</button>
 						</div>
 						<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">PASSWORD</p>
 					</div>
 				</div>
 				<button class="h-10 px-16 w-max bg-amber-700 rounded-full font-bold
-					hover:bg-[#39393f]">Sign up</button>
+					hover:bg-[#39393f] transition-colors">Sign up</button>
 			</form>
 			{:else}
 			<form class="flex flex-col gap-5 origin-right w-full"
@@ -111,7 +112,7 @@
 							<button on:click={togglePass2} type="button"
 								class="absolute right-5 h-5 bottom-5 invert opacity-60 z-50">
 								<img src="svg/{showPass2 ? "hide_eye" : "show_eye"}.svg" alt="show pass"
-									class="h-5 opacity-60 hover:opacity-100">
+									class="h-5 opacity-60 hover:opacity-100 transition-opacity">
 							</button>
 						</div>
 						<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">PASSWORD</p>
@@ -126,14 +127,14 @@
 							<button on:click={togglePass3} type="button"
 								class="absolute right-5 h-5 bottom-5 invert opacity-60 z-50">
 								<img src="svg/{showPass3 ? "hide_eye" : "show_eye"}.svg" alt="show pass"
-									class="h-5 opacity-60 hover:opacity-100">
+									class="h-5 opacity-60 hover:opacity-100 transition-opacity">
 							</button>
 						</div>
 						<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">CONFIRM PASSWORD</p>
 					</div>
 				</div>
 				<button class="h-10 px-16 w-max bg-amber-700 rounded-full font-bold
-					hover:bg-[#39393f]">Sign up</button>
+					hover:bg-[#39393f] transition-colors">Sign up</button>
 			</form>
 			{/if}
 		</div>

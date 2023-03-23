@@ -4,9 +4,9 @@
 
 @layer base {
 	body {
+		-webkit-tap-highlight-color: transparent;
 		font-family: Regular;
 		cursor: default;
-		-webkit-tap-highlight-color: transparent;
 		user-select: none;
 		background: #1c1c1c;
         margin: 0;

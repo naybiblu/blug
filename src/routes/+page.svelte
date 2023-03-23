@@ -3,9 +3,11 @@
 
 <svelte:head>
     <title>Blug with Naybiblu</title>
+    <link rel="icon" href="png/icon.png" />
 </svelte:head>
 
-<section class="h-[88.3vh] w-full flex justify-center overflow-hidden">
+<section class="h-[88.3vh] w-full flex justify-center overflow-hidden
+    xs:h-screen">
     <div class="flex flex-row-reverse flex-wrap items-center w-3/4 h-full justify-between gap-5
         xs:w-full xs:justify-center">
         <div class="relative aspect-square h-[30rem] flex items-center justify-center
@@ -65,7 +67,7 @@
                 want to say...
             </p>
             <a href="/home" class="text-base absolute left-0 -bottom-6 opacity-60 font-[Bold]
-                hover:opacity-80
+                hover:opacity-80 transition-opacity
                 xs:-bottom-7 xs:right-0">
                 <p class="tracking-widest flex flex-row items-center justify-center gap-2">
                     <img src="svg/arrow.svg" alt="arrow" class="invert h-4 rotate-180">
