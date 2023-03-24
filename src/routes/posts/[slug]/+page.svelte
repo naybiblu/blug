@@ -6,7 +6,6 @@
     import { getYear, getMonth, getDate } from "$lib/helpers/time";
 
     $: clickedTags = true;
-    const html = data.component.render().html;
 
     const clickedInfo = (e: any) => {
         const infoTitle = e.target.childNodes[0].textContent;
