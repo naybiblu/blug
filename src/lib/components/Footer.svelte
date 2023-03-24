@@ -68,7 +68,7 @@
                     </p>
                     <div class="flex flex-row w-96 items-center justify-center
                         xs:w-[19.5rem]">
-                        <input type="email" name="email"
+                        <input type="email" name="email" placeholder="ampingping@example.com"
                             class="h-10 w-full bg-transparent border-4 rounded-full
                             px-5 outline-none">
                         <button class="-ml-12 bg-white rounded-full h-10 px-6

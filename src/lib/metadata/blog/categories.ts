@@ -20,3 +20,11 @@ export const categories = () => {
         }
     ];
 };
+
+export const lang = () => {
+    return [
+        "Taglish (Tagalog-English)",
+        "English",
+        "Filipino"
+    ];
+};

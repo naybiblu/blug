@@ -1,8 +1,6 @@
 <script lang="ts">
     export let level = 1;
 
-    import { redirect as goto } from "@sveltejs/kit";
-
     let typed: string;
 
     const reset = () => typed = "";
@@ -10,9 +8,16 @@
         const form = new FormData(e.target);
         const query = form.get("search");
 
-        throw location.href = `/search/${query!.replaceAll(" ", "")}`;
+        throw location.href = `/search/${query!.replaceAll(" ", "-")}`;
     }
 </script>
+
+<style>
+    input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 5.75rem #39393f inset !important;
+		-webkit-text-fill-color: white !important;
+	}
+</style>
 
 <section class="w-full h-[4.5rem] flex fixed top-0 left-0 items-center px-20 justify-between bg-[#1c1c1c]
     shadow-lg z-50

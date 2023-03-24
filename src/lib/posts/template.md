@@ -2,6 +2,7 @@
 title: ""
 img: ""
 category: ""
+language: ""
 tags: []
 date: "yyyy-mm-dd"
 draft: true

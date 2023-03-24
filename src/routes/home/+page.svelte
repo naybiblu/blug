@@ -1,7 +1,6 @@
 <script lang="ts">
     import Header from '$lib/components/Header.svelte';
     import Directory from '$lib/components/BlogDirectory.svelte';
-    import Hoverable from '$lib/components/Hoverable.svelte';
     import { filterPosts } from '$lib/metadata/blog/posts';
     import { categoryId } from '$lib/stores/misc';
     import { fade } from 'svelte/transition';
@@ -51,13 +50,29 @@
 </section>
 {#key filterPosts({ category: cId })}
     <section class="flex flex-col w-5/6 h-max self-center py-16 gap-2" in:fade>
+        {#if condition}
+            <div class="flex flex-col justify-center w-full h-full gap-2 mb-10">
+                <div class="flex flex-row border-b-2 border-white/50 justify-between items-center pb-1">
+                    <h1 class="font-[Bold] text-3xl tracking-wider flex flex-row relative w-full
+                        xs:text-2xl xs:leading-[0.7]">
+                        Recent blugs
+                    </h1>
+                </div>
+                <p class="bg-[#39393f] w-full py-5 justify-center flex italic text-sm rounded-lg
+                    flex-row items-center gap-3 mt-2
+                    xs:flex-col xs:items-center xs:text-center">
+                    <img src="svg/warning.svg" alt="warning"
+                        class="h-10 animate-pulse">
+                    <span class="opacity-70
+                        xs:w-5/6">
+                        As of the moment, there are no available blugs under this category.
+                    </span>
+                </p>
+            </div>
+        {/if}
         <div class="flex flex-row border-b-2 border-white/50 justify-between items-center pb-1">
             <h1 class="font-[Bold] text-3xl tracking-wider flex flex-row relative w-full">
                 {condition ? "Popular" : "Recent"} blugs
-                {#if condition}
-                    <Hoverable message="As of the moment, there are no available blugs under this category."
-                    icon="svg/warning.svg" css="absolute w-1/2 bottom-1 left-[15.5rem]"/>
-                {/if}
             </h1>
             <!--<button class="flex items-center justify-center hover:bg-[#39393f] rounded-full opacity-60
                 p-2">
@@ -83,7 +98,7 @@
                             {current === i + 1 ? "bg-amber-700 opacity-100 cursor-default" 
                             : "hover:opacity-100  opacity-60"}"
                             on:click={clickPage}>
-                            <h1 class="font-[Bold]">{i + 1}</h1>
+                            <h1 class="flex items-center justify-center font-bold">{i + 1}</h1>
                         </button>
                     </li>
                 {/each}

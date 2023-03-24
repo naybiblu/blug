@@ -1,9 +1,10 @@
 ---
-title: "The Showdown ReadME new"
-img: "https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png"
+title: "The Showdown ReadME old"
+img: "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
 category: 0
+language: 1
 tags: ["showdown", "test", "oo"]
-date: "2022-03-23"
+date: "2007-03-21"
 draft: false
 summary: "Showdown is a JavaScript Markdown to HTML converter, based on the original works by John Gruber.
 Showdown can be used client side (in the browser) or server side (with Node.js). Showdown is a JavaScript Markdown to HTML converter, based on the original works by John Gruber.
@@ -532,9 +533,6 @@ Please see [this issue](https://github.com/showdownjs/showdown/issues/114) to ex
 
 ## Credits
 Full credit list at https://github.com/showdownjs/showdown/blob/master/CREDITS.md
-
-Showdown is powered by:<br/>
-[![webstorm](https://www.jetbrains.com/webstorm/documentation/docs/logo_webstorm.png)](https://www.jetbrains.com/webstorm/)
 
 
 

@@ -19,7 +19,7 @@
         posts = filterPosts({ category: undefined, originalArr: searchPosts({ query: data.query }) });
         condition = searchPosts({ query: data.query }).length === 0;
 
-        if (condition) posts = filterPosts({ category: undefined });
+        if (condition) posts = filterPosts({ category: undefined, randomize: true });
         pages = Math.ceil(posts.length / limit);
 
         isPrevDisabled = current === 1;
@@ -50,14 +50,36 @@
 </svelte:head>
 
 <section class="flex flex-col w-5/6 h-max self-center py-12 gap-2" in:fade>
+    {#if condition}
+        <div class="flex flex-col justify-center w-full h-full gap-2 mb-10">
+            <div class="flex flex-row border-b-2 border-white/50 justify-between items-center pb-1">
+                <h1 class="font-[Bold] text-3xl tracking-wider flex flex-row relative w-full gap-2 flex-wrap
+                    xs:text-2xl xs:leading-[0.7]">
+                    <span class="opacity-70">Posts related to </span>
+                    <span class="opacity-100">{data.query.replaceAll("-", " ")}</span>
+                </h1>
+            </div>
+            <p class="bg-[#39393f] w-full py-5 justify-center flex italic text-sm rounded-lg
+                flex-row items-center gap-3 mt-2
+                xs:flex-col xs:items-center xs:text-center">
+                <img src="../svg/warning.svg" alt="warning"
+                    class="h-10 animate-pulse">
+                <span class="opacity-70 font-[Regular]
+                    xs:w-5/6">
+                    Sayang! There's no matching blugs with the words you've given to me.
+                </span>
+            </p>
+        </div>
+    {/if}
     <div class="flex flex-row border-b-2 border-white/50 justify-between items-center pb-1">
-        <h1 class="font-[Bold] text-3xl tracking-wider flex flex-row relative w-full gap-2">
-            <span class="opacity-70">Posts related to </span>
-            <span class="opacity-100">{data.query.replaceAll("-", " ")}</span>
-            <!--{#if condition}
-                <Hoverable message="As of the moment, there are no available blugs under this category."
-                    icon="svg/warning.svg" css="absolute w-1/2 bottom-1 left-[15.5rem]"/>
-            {/if}-->
+        <h1 class="font-[Bold] text-3xl flex flex-row relative w-full gap-2 flex-wrap
+            xs:text-2xl">
+                {#if condition}
+                    Popular Blugs
+                {:else}
+                    <span class="opacity-70">Posts related to </span>
+                    <span class="opacity-100">{data.query.replaceAll("-", " ")}</span>
+                {/if}
         </h1>
         <!--<button class="flex items-center justify-center hover:bg-[#39393f] rounded-full opacity-60
             p-2">
@@ -69,7 +91,7 @@
         <ul class="w-full flex flex-row justify-center gap-8">
             <li class="flex items-center justify-center">
                 <button class="flex items-center justify-center bg-[#39393f]
-                      h-8 w-8 rounded-full transition-opacity
+                    h-8 w-8 rounded-full transition-opacity
                     {isPrevDisabled ? "cursor-default opacity-20" : "cursor-pointer opacity-60 hover:opacity-100"}"
                     on:click={prev}>
                     <img src="../svg/arrow.svg" alt="prev"
@@ -83,7 +105,7 @@
                         {current === i + 1 ? "bg-amber-700 opacity-100 cursor-default" 
                         : "hover:opacity-100  opacity-60"}"
                         on:click={clickPage}>
-                        <h1 class="font-[Bold]">{i + 1}</h1>
+                        <h1 class="flex items-center justify-center font-bold">{i + 1}</h1>
                     </button>
                 </li>
             {/each}
