@@ -11,9 +11,11 @@
             <div class="p-5 h-[11.5rem] w-full bg-[#39393f] rounded-xl flex flex-row gap-10 relative
                 xs:h-max xs:flex-col xs:gap-5"
                 id="blogDir">
-                <img src={d.img} alt={d.title.toLowerCase().replace(" ", "-")}
-                    class="aspect-video h-36 rounded-lg
-                        xs:h-32">
+                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}" class="w-fill h-full">
+                    <img src={d.img} alt={d.title.toLowerCase().replaceAll(" ", "-")}
+                        class="aspect-video h-36 rounded-lg
+                            xs:h-32">
+                </a>
                 <div class="flex flex-col w-full gap-1 h-full overflow-hidden text-ellipsis">
                     <p class="text-sm opacity-50 font-[Bold] flex flex-row gap-2 flex-wrap
                         xs:text-xs">
@@ -22,10 +24,12 @@
                         <span>{getMonth(d.date)} {getDate(d.date)}, {getYear(d.date)}</span>
                     </p>
                     <hr class="opacity-50">
-                    <h1 class="text-2xl font-black
-                        xs:text-2xl">
-                        {d.title}
-                    </h1>
+                    <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}">
+                        <h1 class="text-2xl font-black hover:underline
+                            xs:text-2xl">
+                            {d.title}
+                        </h1>
+                    </a>
                     <p class="flex flex-row gap-2 flex-wrap">
                         {#each d.tags as tag}
                             <a href="/search/{tag}"
@@ -41,12 +45,14 @@
                         {d.summary}
                     </p>
                 </div>
-                <p class="absolute bottom-[1.4rem] right-6 bg-gradient-to-l font-black
-                    w-56 text-right from-[#39393f] via-[#39393f] text-white/60
-                    hover:text-white/90 transition-colors
-                    xs:bottom-[0.87rem]">
-                    Read more...
-                </p>
+                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}">
+                    <p class="absolute bottom-[1.4rem] right-6 bg-gradient-to-l font-black
+                        w-56 text-right from-[#39393f] via-[#39393f] text-white/60
+                        hover:text-white/90 transition-colors
+                        xs:bottom-[0.87rem]">
+                        Read more...
+                    </p>
+                </a>
             </div>
         {/each}
     </div>

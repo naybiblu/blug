@@ -5,7 +5,7 @@
     import { socials } from '$lib/metadata/main/socials';
     import { funThings } from '$lib/metadata/main/funThings';
 
-    $: categoryArr = categories().map((c: any) => c.title);
+    $: categoryArr = categories.map((c: any) => c.title);
 </script>
 
 <style>
@@ -49,7 +49,7 @@
             </div>
             <div class="flex flex-col justify-start">
                 <h1 class="font-[Bold] text-sm tracking-wide pb-5">Fun Things</h1>
-                {#each funThings() as fun}
+                {#each funThings as fun}
                     <a href={fun.link}
                         class="opacity-80 hover:opacity-100 transition-opacity">
                         <p>{fun.name}</p>
@@ -79,7 +79,7 @@
                 </div>
             </form> 
             <div class="flex flex-row justify-between items-center gap-5">
-                {#each socials() as social} 
+                {#each socials as social} 
                     <a href={social.link}>
                         <img src="{"../".repeat(level - 1)}svg/{social.name.toLowerCase()}.svg" alt={social.name.toLowerCase()}
                             class="h-8 invert opacity-70 hover:opacity-100 transition-opacity">

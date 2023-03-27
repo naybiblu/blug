@@ -6,12 +6,12 @@
     import { onMount } from "svelte";
     import { categoryId } from '$lib/stores/misc';
 
-    let sample = categories();
+    let sample = categories;
     let timer = 0;
     let first: any, index: number;
     $: {
         first = sample[0];
-        index = categories().findIndex((c: any) => c.title === first.title);
+        index = categories.findIndex((c: any) => c.title === first.title);
         if (first.title) categoryId.set(index);
     }
 

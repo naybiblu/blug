@@ -6,7 +6,7 @@
     import { fade } from 'svelte/transition';
     import { settings } from '$lib/metadata/main/settings';
 
-    let cId: number, condition: boolean, posts: any, pages: number, limit = settings().postsPerPage.home,
+    let cId: number, condition: boolean, posts: any, pages: number, limit = settings.postsPerPage.home,
         isPrevDisabled: boolean, isNextDisabled: boolean,
         current = 1, index = 0;
     $: {

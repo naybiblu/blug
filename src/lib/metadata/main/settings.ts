@@ -1,8 +1,6 @@
-export const settings = () => {
-    return {
-        postsPerPage: { 
-            home: 5,
-            search: 10
-        },
-    };
-}
+export const settings = {
+    postsPerPage: { 
+        home: 5,
+        search: 10
+    },
+};

@@ -7,7 +7,9 @@ import { resolve } from 'path';
 export default ({ mode }: any) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 	return defineConfig({
-		plugins: [sveltekit()],
+		plugins: [
+      sveltekit(),
+    ],
 		ssr: {
 			external: Object.keys(pkg.dependencies || {})
 		},

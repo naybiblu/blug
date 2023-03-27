@@ -10,7 +10,7 @@
 
     let queryArr = [...data.query];
     let capitalQuery = queryArr[0].toUpperCase() + queryArr.slice(1, queryArr.length).join("").replaceAll("-", " ");
-    let cId: number, condition: boolean, posts: any, pages: number, limit = settings().postsPerPage.search,
+    let cId: number, condition: boolean, posts: any, pages: number, limit = settings.postsPerPage.search,
         isPrevDisabled: boolean, isNextDisabled: boolean,
         current = 1, index = 0;
 

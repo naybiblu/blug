@@ -1,16 +1,14 @@
-export const funThings = () => {
-    return [
-        {
-            name: "Freedom Wall",
-            link: "/"
-        },
-        {
-            name: "Tite",
-            link: "/"
-        },
-        {
-            name: "Hahahaha",
-            link: "/"
-        }
-    ];
-};
+export const funThings = [
+    {
+        name: "Freedom Wall",
+        link: "/"
+    },
+    {
+        name: "Tite",
+        link: "/"
+    },
+    {
+        name: "Hahahaha",
+        link: "/"
+    }
+];

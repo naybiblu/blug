@@ -1,20 +1,31 @@
 import { categories, lang } from "$lib/metadata/blog/categories";
 import { shuffle, sortByDate } from "$lib/helpers/array";
 
-let categoryNames = [].concat(...categories().map((c: any) => c.title.toLowerCase().split(" ")));
+let categoryNames = [].concat(...categories.map((c: any) => c.title.toLowerCase().split(" ")));
 
-const getMetadata = () => {
+export const getMetadata = () => {
     const allFiles = import.meta.glob('$lib/posts/*.md', { eager: true });
-    const blogPosts = Object.entries(allFiles).filter(([ path ]) => !path.includes("template.md"))
+    const blogPosts = Object.entries(allFiles).filter(([ path ]) => !path.includes("template.md"));
     const all = blogPosts.map(([ path, post ]) => {
         const fileName = path.replace("/src/lib/posts/", "");
         const metadata = { ...post!.metadata };
-        if (!isNaN(metadata.category)) metadata.category = categories()[Number(metadata.category)].title;
-        if (!isNaN(metadata.language)) metadata.language = lang()[Number(metadata.language)];
-        return { ...metadata, file: fileName};
+        if (!isNaN(metadata.category)) metadata.category = categories[Number(metadata.category)].title;
+        if (!isNaN(metadata.language)) metadata.language = lang[Number(metadata.language)];
+        return { ...metadata, file: fileName };
     });
     return all;
 };
+
+export const getContent = async (fileName?: string) => {
+    const allFiles = import.meta.glob('$lib/posts/*.md', { eager: true });
+    const blogPosts = Object.entries(allFiles).filter(([ path ]) => !path.includes("template.md"));
+    const all = blogPosts.map(async([ path, post ]) => {
+        return { file: path.replace("/src/lib/posts/", ""), content: await post!.default.render().html };
+    });
+    const resolvedFiles = await Promise.all(all);
+    const file = resolvedFiles.filter((p: any) => p.file.toLowerCase() === fileName.toLowerCase())[0];
+    return fileName ? file : all;
+}
 
 export const filterPosts = ({ removeDraft = true, randomize = false, recent = true, originalArr = null, category }: 
     { removeDraft?: boolean, randomize?: boolean, recent?: boolean, originalArr?: any[] | null,
