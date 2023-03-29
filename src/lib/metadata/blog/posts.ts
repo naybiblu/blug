@@ -41,7 +41,7 @@ export const filterPosts = ({ removeDraft = true, randomize = false, recent = tr
 export const searchPosts = ({ query, originalArr = null }: { query: string, originalArr?: any[] | null }) => {
     query = query.toLowerCase();
     let tbFiltered = originalArr || getMetadata();
-    let queryArr = query.split(" ");
+    let queryArr = query.split("-");
     let tempArr = [];
     if (queryArr.length === 1) { 
         tempArr.push(...tbFiltered.filter((p: any) => p.title.toLowerCase().split(" ").includes(query)));

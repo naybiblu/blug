@@ -32,9 +32,11 @@
 			{"Blug With Naybiblu".repeat(1000).toUpperCase()
 			.split("").join(" ")}
 		</h1>
-		<div class="flex flex-col h-full gap-8 text-white z-30 pl-20 justify-center relative">
+		<div class="flex flex-col h-full gap-8 text-white z-30 pl-20 justify-center relative
+			xs:px-5">
 			<div class="flex flex-col gap-5">
-				<p class="opacity-60 tracking-[0.5rem] flex flex-row gap-3 items-center">
+				<p class="opacity-60 tracking-[0.5rem] flex flex-row gap-3 items-center
+					xs:bg-gradient-to-l xs:from-[#1c1c1c] xs:via-[#1c1c1c] rounded-full">
 					<a href="/home">
 						<img src="svg/arrow.svg" alt="back" class="rotate-90 h-5 invert opacity-60
 							hover:opacity-100 transition-opacity">	
@@ -63,10 +65,12 @@
 				<div class="relative">
 					<input type="text" name="email" placeholder="somethingsweet@example.com"
 						class="outline-none rounded-xl px-5 pt-5 w-[31.3rem] h-[4.5rem] bg-[#39393f]
-						focus:outline-amber-700">
+						focus:outline-amber-700
+						xs:w-full">
 					<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">EMAIL</p>
 				</div>
-				<div class="flex flex-row gap-5 w-[31.3rem]">
+				<div class="flex flex-row gap-5 w-[31.3rem]
+					xs:w-full">
 					<div class="relative w-full">
 						<div class="relative flex flex-row w-full">
 							<input type={showPass2 ? "text" : "password"} 
@@ -92,22 +96,26 @@
 				<div class="relative">
 					<input type="text" name="username" placeholder="hiImHappyiGuess"
 						class="outline-none rounded-xl px-5 pt-5 w-[31.3rem] h-[4.5rem] bg-[#39393f]
-						focus:outline-amber-700">
+						focus:outline-amber-700
+						xs:w-full">
 					<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">USERNAME</p>
 				</div>
 				<div class="relative">
 					<input type="text" name="email" placeholder="somethingsweet@example.com"
 						class="outline-none rounded-xl px-5 pt-5 w-[31.3rem] h-[4.5rem] bg-[#39393f]
-						focus:outline-amber-700">
+						focus:outline-amber-700
+						xs:w-full">
 					<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">EMAIL</p>
 				</div>
-				<div class="flex flex-row gap-5 w-[31rem]">
+				<div class="flex flex-row gap-5 w-[31rem]
+					xs:flex-wrap xs:w-full">
 					<div class="relative w-full">
 						<div class="relative flex flex-row w-full">
 							<input type={showPass2 ? "text" : "password"} 
 								name="email" placeholder="lamepassword12345"
 								class="outline-none rounded-xl px-5 pt-5 h-[4.5rem] bg-[#39393f]
-								focus:outline-amber-700 w-60">
+								focus:outline-amber-700 w-60
+								xs:w-full">
 							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<button on:click={togglePass2} type="button"
 								class="absolute right-5 h-5 bottom-5 invert opacity-60 z-50">
@@ -117,12 +125,13 @@
 						</div>
 						<p class="absolute top-3 left-5 text-sm opacity-50 font-extrabold">PASSWORD</p>
 					</div>
-					<div class="relative">
-						<div class="relative flex flex-row">
+					<div class="relative w-full">
+						<div class="relative flex flex-row w-full">
 							<input type={showPass3 ? "text" : "password"} 
 								name="email" placeholder="lamepassword12345"
 								class="outline-none rounded-xl px-5 pt-5 w-60 h-[4.5rem] bg-[#39393f]
-								focus:outline-amber-700">
+								focus:outline-amber-700
+								xs:w-full">
 							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<button on:click={togglePass3} type="button"
 								class="absolute right-5 h-5 bottom-5 invert opacity-60 z-50">

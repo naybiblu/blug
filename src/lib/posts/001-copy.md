@@ -14,6 +14,7 @@ Showdown can be used client side (in the browser) or server side (with Node.js).
 <script>
   import H from '$lib/components/blog/Header.svelte';
   import Img from '$lib/components/blog/Image.svelte';
+  import YT from '$lib/components/blog/YTEmbed.svelte';
 </script>
 
 Sabi nila, **ampangit mo raw**. __Well__, to be honest, this is the truth we are pursuing for. Oh, 'di ba? Ang bullshit pakinggan... Bakit kaya ganito?
@@ -26,3 +27,7 @@ Kung susumahin, gusto ko ng mamatay. Ang dami-dami kasing iisipin, *dios mio*, h
 Pero take note na kahit nakaka-putangina ang buhay, wherein you still let it fuck you, well, in that kind of situation, we should bring the bright side of it.
 
 At least buhay, 'di ba?
+
+Anyway, here's the song na naka-LSS...
+
+<YT id="u6wOyMUs74I" name="Eyes Closed - Ed Sheeran"/>

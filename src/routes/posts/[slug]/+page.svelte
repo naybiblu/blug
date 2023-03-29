@@ -4,6 +4,7 @@
     data = data.data;
 
     import { getYear, getMonth, getDate } from "$lib/helpers/time";
+    import Hoverable from "$lib/components/Hoverable.svelte";
 
     $: clickedTags = true;
 
@@ -16,6 +17,12 @@
 <svelte:head>
     <title>[{data.title}] Blug With Naybiblu</title>
     <link rel="icon" href="../png/icon.png" />
+    <meta name="og:title" content="[{data.title}] Blug With Naybiblu">
+    <meta name="description" content={data.summary}>
+    <meta name="og:description" content={data.summary}>
+    <meta name="author" content="Mharc Nyvhie Guillermo">
+    <meta name="keywords" content={data.tags.join(", ")}>
+    <meta name="og:image" content={data.img}>
 </svelte:head>
 
 <section class="flex flex-row w-5/6 h-max self-center py-12 gap-10">
@@ -26,7 +33,7 @@
                 <div class="w-full h-full bg-gradient-to-t from-[#1c1c1c]/90 via-[#1c1c1c]/80
                     absolute z-10"></div>
                 <div class="flex flex-col p-5 gap-2 z-20">
-                    <p class="text-sm font-[Bold] flex flex-row gap-2 flex-wrap
+                    <p class="text-sm font-[Bold] flex flex-row gap-2 flex-wrap items-center
                         xs:text-xs">
                         <span>{data.category}</span>
                         <span>•</span>
@@ -40,7 +47,8 @@
                 </div>
                 
         </div>
-        <div class="flex flex-col w-2/3 self-center gap-10">
+        <div class="flex flex-col w-2/3 self-center gap-10
+            xs:w-full">
             {@html data.content.code}
         </div>
     </div>

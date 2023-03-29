@@ -11,10 +11,10 @@
             <div class="p-5 h-[11.5rem] w-full bg-[#39393f] rounded-xl flex flex-row gap-10 relative
                 xs:h-max xs:flex-col xs:gap-5"
                 id="blogDir">
-                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}" class="w-fill h-full">
+                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}" class="aspect-video h-36
+                    xs:h-32">
                     <img src={d.img} alt={d.title.toLowerCase().replaceAll(" ", "-")}
-                        class="aspect-video h-36 rounded-lg
-                            xs:h-32">
+                        class="h-full w-full rounded-lg">
                 </a>
                 <div class="flex flex-col w-full gap-1 h-full overflow-hidden text-ellipsis">
                     <p class="text-sm opacity-50 font-[Bold] flex flex-row gap-2 flex-wrap
@@ -45,11 +45,12 @@
                         {d.summary}
                     </p>
                 </div>
-                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}">
-                    <p class="absolute bottom-[1.4rem] right-6 bg-gradient-to-l font-black
-                        w-56 text-right from-[#39393f] via-[#39393f] text-white/60
-                        hover:text-white/90 transition-colors
-                        xs:bottom-[0.87rem]">
+                <a href="/posts/{d.title.toLowerCase().replaceAll(" ", "-")}"
+                    class="absolute bottom-[1.4rem] right-6 bg-gradient-to-l font-black
+                    w-56 text-right from-[#39393f] via-[#39393f] text-white/60
+                    hover:text-white/90 transition-colors
+                    xs:bottom-[0.87rem]">
+                    <p>
                         Read more...
                     </p>
                 </a>

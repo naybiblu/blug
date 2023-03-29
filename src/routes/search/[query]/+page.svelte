@@ -3,7 +3,7 @@
     export let data: any;
 
     import Directory from '$lib/components/BlogDirectory.svelte';
-    import { searchPosts, filterPosts } from '$lib/metadata/blog/posts';
+    import { filterPosts } from '$lib/metadata/blog/posts';
     import { categoryId } from '$lib/stores/misc';
     import { settings } from '$lib/metadata/main/settings';
     import { fade } from 'svelte/transition';
@@ -16,8 +16,8 @@
 
     $: {
         pages = 1;
-        posts = filterPosts({ category: undefined, originalArr: searchPosts({ query: data.query }) });
-        condition = searchPosts({ query: data.query }).length === 0;
+        posts = filterPosts({ category: undefined, originalArr: data.blugs });
+        condition = data.blugs.length === 0;
 
         if (condition) posts = filterPosts({ category: undefined, randomize: true });
         pages = Math.ceil(posts.length / limit);

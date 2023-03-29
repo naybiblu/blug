@@ -70,7 +70,8 @@
                         xs:w-[19.5rem]">
                         <input type="email" name="email" placeholder="ampingping@example.com"
                             class="h-10 w-full bg-transparent border-4 rounded-full
-                            px-5 outline-none">
+                            px-5 outline-none
+                            xs:text-sm">
                         <button class="-ml-12 bg-white rounded-full h-10 px-6
                             text-[#39393f] hover:scale-105 font-bold transition-all" disabled>
                             Sure
