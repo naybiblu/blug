@@ -7,9 +7,9 @@ export const categories = [
     },
     {
         img: "https://resources.tidal.com/images/ada5c8da/e5e6/4296/9eb2/a91950537768/640x640.jpg",
-        title: "Rantatatat",
-        sub: "Hear the woes of a stressed young adult.",
-        description: "Environment which we live in is expected to be stressful to the point that you want to rant-tatatat."
+        title: "Bakit List",
+        sub: "Collection of whys whereas each is answered subjectively/objectively.",
+        description: `The hardest question you might encounter is the 'why'. Why? Well, it might be answered in our Bakit List.`
     },
     {
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyiQ8AZPmt020ovFfIGi9DzUgItFbfaS9lD7njoX1Hp4ZQ6jS1VbEkWfvodpgGU5b-rmU&usqp=CAU",

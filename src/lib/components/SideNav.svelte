@@ -44,7 +44,7 @@
             <img src="{"../".repeat(level - 1)}/svg/menu.svg" alt="menu"
                 class="h-5 invert"/>
         </button>
-        <div class="absolute flex-col flex bg-[#4e4e55] min-h-[7rem] w-[3.5rem] rounded-full
+        <div class="absolute flex-col flex bg-[#4e4e55] w-[3.5rem] rounded-full
             z-10 origin-bottom {menuShow ? '' : 'scale-0'}
             bottom-0 transition-all pb-[3.5rem] pt-2">
             <a href="/home">

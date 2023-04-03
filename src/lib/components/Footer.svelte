@@ -4,8 +4,9 @@
     import { categories } from '$lib/metadata/blog/categories';
     import { socials } from '$lib/metadata/main/socials';
     import { funThings } from '$lib/metadata/main/funThings';
+    import { shuffle } from '$lib/helpers/array';
 
-    $: categoryArr = categories.map((c: any) => c.title);
+    $: categoryArr = shuffle(categories.map((c: any) => c.title)).slice(0, 3);
 </script>
 
 <style>
