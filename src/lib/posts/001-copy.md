@@ -9,17 +9,22 @@ draft: false
 summary: "Showdown is a JavaScript Markdown to HTML converter, based on the original works by John Gruber.
 Showdown can be used client side (in the browser) or server side (with Node.js). Showdown is a JavaScript Markdown to HTML converter, based on the original works by John Gruber.
 Showdown can be used client side (in the browser) or server side (with Node.js)."
+exciter: "Some thoughts that somehow resonates to my shit in life right now."
 ---
 
 <script>
   import H from '$lib/components/blog/Header.svelte';
   import Img from '$lib/components/blog/Image.svelte';
   import YT from '$lib/components/blog/YTEmbed.svelte';
+  import S from '$lib/components/blog/Space.svelte';
+  import Intro from '$lib/components/blog/Intro.svelte';
 </script>
 
-Sabi nila, **ampangit mo raw**. __Well__, to be honest, this is the truth we are pursuing for. Oh, 'di ba? Ang bullshit pakinggan... Bakit kaya ganito?
+<Intro text="Sabi nila, ampangit mo raw. Well, to be honest, this is the truth we are pursuing for."/>
 
-<H level=3 text='The Dilemma of Thinking Nonsense'/>
+Oh, 'di ba? Ang bullshit pakinggan... Bakit kaya ganito?
+
+<H text='The Dilemma of Thinking Nonsense'/>
 
 <Img src="https://www.cdm.org/blog/wp-content/uploads/2021/03/nonsense1.jpg"/>
 

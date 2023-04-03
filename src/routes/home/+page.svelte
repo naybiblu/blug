@@ -44,12 +44,12 @@
     <link rel="icon" href="png/icon.png" />
 </svelte:head>
 
-<section class="flex flex-col w-full h-[60vh]
-    xs:h-screen overflow-hidden">
+<section class="flex flex-col w-full h-[60vh] overflow-hidden select-none
+    xs:h-screen ">
         <Header/>
 </section>
 {#key filterPosts({ category: cId })}
-    <section class="flex flex-col w-5/6 h-max self-center py-16 gap-2" in:fade>
+    <section class="flex flex-col w-5/6 h-max self-center py-16 gap-2 select-none" in:fade>
         {#if condition}
             <div class="flex flex-col justify-center w-full h-full gap-2 mb-10">
                 <div class="flex flex-row border-b-2 border-white/50 justify-between items-center pb-1">

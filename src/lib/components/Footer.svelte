@@ -16,7 +16,7 @@
 </style>
 
 <section class="h-max w-full bg-[#39393f] flex flex-col items-center pt-8 pb-2
-    overflow-hidden
+    overflow-hidden select-none
     xs:pb-0">
     <div class="flex flex-row items-center justify-between gap-20
         border-b-2 border-white/60 pb-8
@@ -48,7 +48,7 @@
                 {/each}
             </div>
             <div class="flex flex-col justify-start">
-                <h1 class="font-[Bold] text-sm tracking-wide pb-5">Fun Things</h1>
+                <h1 class="font-[Bold] text-sm tracking-wide pb-5">Fancy Ones</h1>
                 {#each funThings as fun}
                     <a href={fun.link}
                         class="opacity-80 hover:opacity-100 transition-opacity">

@@ -21,7 +21,7 @@
 	<link rel="icon" href="png/icon.png" />
 </svelte:head>
 
-<div class="h-screen w-full flex overflow-hidden">
+<div class="h-screen w-full flex overflow-hidden select-none">
 	<div class="h-full w-full relative">
 		<div class="h-full w-full absolute bg-gradient-to-tr from-[#1c1c1c] z-10"></div>
 		<div class="h-full w-full absolute bg-gradient-to-tr from-[#1c1c1c] z-10"></div>

@@ -3,7 +3,7 @@
     export let alt = "image";
 </script>
 
-<div class="flex justify-center w-full">
-    <img src={src} alt={alt} class="aspect-video w-2/3 rounded-lg
+<div class="flex justify-center w-full items-center">
+    <img src={src} alt={alt} class="aspect-video w-[70%] rounded-lg
     xs:w-full"/>
 </div>

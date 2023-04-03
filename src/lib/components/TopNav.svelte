@@ -20,7 +20,7 @@
 </style>
 
 <section class="w-full h-[4.5rem] flex fixed top-0 left-0 items-center px-20 justify-between bg-[#1c1c1c]
-    shadow-lg z-50
+    shadow-lg z-50 select-none
     xs:hidden">
     <a href="/home" class="w-max h-max">
         <div class="flex gap-3 items-center font-extrabold">
