@@ -10,7 +10,7 @@
 <svelte:head>
     <title>{data.title}</title>
     <link rel="icon" href="../png/icon.png" />
-    <meta name="og:title" content="[{data.title}] Blug With Naybiblu">
+    <meta name="og:title" content={data.title}>
     <meta name="description" content={data.exciter}>
     <meta name="og:description" content={data.exciter}>
     <meta name="author" content="Mharc Nyvhie Guillermo">
