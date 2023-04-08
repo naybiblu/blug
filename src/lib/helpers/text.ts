@@ -14,22 +14,22 @@ export const slugify = (str: string, url = false, urlify = true) => {
   
   for (var word of str.split(url ? "-" : " ")) {
     switch (word) {
-      case "\\": return strArr.push("[x+5c]");
-      case "/": return strArr.push("[x+2f]");
-      case ":": return strArr.push("[x+3a]");
-      case "*": return strArr.push("[x+2a]");
-      case "?": return strArr.push("[x+3f]");
-      case "\"": return strArr.push("[x+22]");
-      case "<": return strArr.push("[x+3c]");
-      case ">": return strArr.push("[x+3e]");
-      case "|": return strArr.push("[x+7c]");
-      case "#": return strArr.push("[x+23]");
-      case "%": return strArr.push("[x+25]");
-      case "[": return strArr.push("[x+5b]");
-      case "]": return strArr.push("[x+5d]");
-      case "(": return strArr.push("[x+28]");
-      case ")": return strArr.push("[x+29]");
-      default: return strArr.push(word);
+      case "\\": strArr.push("[x+5c]"); break;
+      case "/": strArr.push("[x+2f]"); break;
+      case ":": strArr.push("[x+3a]"); break;
+      case "*": strArr.push("[x+2a]"); break;
+      case "?": strArr.push("[x+3f]"); break;
+      case "\"": strArr.push("[x+22]"); break;
+      case "<": strArr.push("[x+3c]"); break;
+      case ">": strArr.push("[x+3e]"); break;
+      case "|": strArr.push("[x+7c]"); break;
+      case "#": strArr.push("[x+23]"); break;
+      case "%": strArr.push("[x+25]"); break;
+      case "[": strArr.push("[x+5b]"); break;
+      case "]": strArr.push("[x+5d]"); break;
+      case "(": strArr.push("[x+28]"); break;
+      case ")": strArr.push("[x+29]"); break;
+      default: strArr.push(word);
     }
   }
   
