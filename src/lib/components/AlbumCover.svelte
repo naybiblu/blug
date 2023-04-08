@@ -28,7 +28,9 @@
             <div class="bg-gradient-to-tr absolute h-full w-full from-black z-20"></div>
             <div class="w-full z-20 px-5 py-3 absolute bottom-0 flex flex-col gap-1
                 text-white/90">
-                <p class="text-[0.5rem] opacity-70 -mb-1 font-[Bold] tracking-widest">{blogCount} POSTS</p>
+                <p class="text-[0.5rem] opacity-70 -mb-1 font-[Bold] tracking-widest">
+                    {blogCount} POST{blogCount > 1 ? "S" : ""}
+                </p>
                 <h1 class="text-4xl w-full break-words font-[Bold] tracking-widest leading-none">
                     {title.toUpperCase()}
                 </h1>

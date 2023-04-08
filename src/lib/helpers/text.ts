@@ -6,12 +6,12 @@ export const splitString = (str: string, size: number) => {
     return chunks;
 };
 
-export const slugify = (str: string, url = false, urlify = true) => {
+export const slugify = (str: string, url = false) => {
   const regex = url ? /[^\w\s-]+/g : /[^\w\s]+/g;
   
-  if (!regex.test(str)) return str;
+  if (!regex.test(str)) return url ? str : str.toLowerCase().replaceAll(" ", "-");;
   
-  const result = str.replace(/[^\w\s-]+/g, '');
+  const result = str.replace(regex, '');
   
-  return urlify ? result.join(url ? "-" : " ").toLowerCase().replaceAll(" ", "-") : result.join(url ? "-" : " ");
+  return url ? result : result.toLowerCase().replaceAll(" ", "-");
 };

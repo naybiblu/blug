@@ -61,5 +61,5 @@ export const searchPosts = ({ query, originalArr = null }: { query: string, orig
 export const searchPost = ({ slug, originalArr = null}: { slug: string, originalArr?: any[] | null }) => {
     slug = slugify(slug, true);
     let postsArr = originalArr || filterPosts({ category: undefined });
-    return postsArr.filter((p: any) => slugify(p.title.toLowerCase(), false, false) === slug)[0];
+    return postsArr.filter((p: any) => slugify(p.title.toLowerCase()) === slug)[0];
 };

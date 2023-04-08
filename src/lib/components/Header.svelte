@@ -11,7 +11,7 @@
     let first: any, index: number;
     $: {
         first = sample[0];
-        index = categories.findIndex((c: any) => c.title === first.title);
+        index = first.title;
         if (first.title) categoryId.set(index);
     }
 

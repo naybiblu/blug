@@ -42,7 +42,7 @@
                 xs:justify-center">
                 <h1 class="font-[Bold] text-sm tracking-wide pb-5">Categories</h1>
                 {#each categoryArr as category}
-                    <a href="/search/{category.toLowerCase().replace(" ", "-")}"
+                    <a href="/search/{category.toLowerCase().replaceAll(" ", "-")}"
                         class="opacity-80 hover:opacity-100 transition-opacity">
                         <p>{category}</p>
                     </a>  

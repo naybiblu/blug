@@ -1,10 +1,33 @@
 <script lang="ts">
+    import { disableLPAnimation } from "$lib/stores/misc";
+
+    let showable = false, menuShow = false, scrollPos = 0;
+
+    $: disableAnimation = true;
+
+    disableLPAnimation.subscribe((v: any) => {
+        disableAnimation = v;
+    });
+
+    const showNav = () => {
+        let current = document.documentElement.scrollTop;
+        showable = scrollPos < current;
+        if (scrollPos < current) {
+            menuShow = false;
+        }
+        scrollPos = current <= 0 ? 0 : current;
+    }
+    const toggler = () => {
+        disableLPAnimation.set(!disableAnimation);
+    }
 </script>
 
 <svelte:head>
     <title>Blug with Naybiblu</title>
     <link rel="icon" href="png/icon.png" />
 </svelte:head>
+
+<svelte:window on:scroll={showNav}/>
 
 <section class="h-[88.3vh] w-full flex justify-center overflow-hidden
     xs:h-screen">
@@ -15,34 +38,34 @@
             <img src="png/naybi.png" alt="naybi" class="aspect-square h-[30rem] z-50">
             <div class="h-[30rem] w-[30rem] 
                 opacity-90 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dashed animate-spin"></div>
+                mt-7 border-dashed {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[40rem] w-[40rem] 
                 opacity-80 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dotted animate-spin"></div>
+                mt-7 border-dotted {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[50rem] w-[50rem] 
                 opacity-70 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dashed animate-spin"></div>
+                mt-7 border-dashed {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[60rem] w-[60rem] 
                 opacity-60 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dotted animate-spin"></div>
+                mt-7 border-dotted {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[70rem] w-[70rem] 
                 opacity-50 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dashed animate-spin"></div>
+                mt-7 border-dashed {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[80rem] w-[80rem] 
                 opacity-40 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dotted animate-spin"></div>
+                mt-7 border-dotted {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[90rem] w-[90rem] 
                 opacity-30 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dashed animate-spin"></div>
+                mt-7 border-dashed {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[100rem] w-[100rem] 
                 opacity-20 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dotted animate-spin"></div>
+                mt-7 border-dotted {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[110rem] w-[110rem] 
                 opacity-10 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dashed animate-spin"></div>
+                mt-7 border-dashed {disableAnimation ? "" : "animate-spin"}"></div>
             <div class="h-[120rem] w-[120rem] 
                 opacity-5 z-40 border-8 border-white absolute rounded-full
-                mt-7 border-dotted animate-spin"></div>
+                mt-7 border-dotted {disableAnimation ? "" : "animate-spin"}"></div>
             <p class="absolute font-black right-16 bottom-5 bg-gradient-to-r px-5 py-2
                 rounded-l-full text-center from-[#39393f] to-[#1c1c1c] z-50
                 xs:right-14">
@@ -77,4 +100,13 @@
             
         </div>
     </div>
+</section>
+
+<section class="fixed bottom-7 right-7 flex flex-row justify-center items-center
+    bg-amber-700 h-[3.5rem] w-max rounded-full z-50 transition-all gap-3
+    px-5
+    {showable ? 'scale-100' : 'scale-0'}">
+    <input type="checkbox" class="rounded-full outline-none" checked={disableAnimation}
+        on:click={toggler}/>
+    <p class="">Disable Animation</p>
 </section>
