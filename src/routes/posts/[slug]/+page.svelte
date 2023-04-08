@@ -8,11 +8,11 @@
 </script>
 
 <svelte:head>
-    <title>[{data.title}] Blug With Naybiblu</title>
+    <title>{data.title}</title>
     <link rel="icon" href="../png/icon.png" />
     <meta name="og:title" content="[{data.title}] Blug With Naybiblu">
-    <meta name="description" content={data.summary}>
-    <meta name="og:description" content={data.summary}>
+    <meta name="description" content={data.exciter}>
+    <meta name="og:description" content={data.exciter}>
     <meta name="author" content="Mharc Nyvhie Guillermo">
     <meta name="keywords" content={data.tags.join(", ")}>
     <meta name="og:image" content={data.img}>
