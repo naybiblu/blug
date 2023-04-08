@@ -1,4 +1,5 @@
 import { categories, lang } from "$lib/metadata/blog/categories";
+import { slugify } from "$lib/helpers/text";
 import { shuffle, sortByDate } from "$lib/helpers/array";
 
 let categoryNames = [].concat(...categories.map((c: any) => c.title.toLowerCase().split(" ")));
@@ -58,7 +59,7 @@ export const searchPosts = ({ query, originalArr = null }: { query: string, orig
 };
 
 export const searchPost = ({ slug, originalArr = null}: { slug: string, originalArr?: any[] | null }) => {
-    slug = slug.toLowerCase().replaceAll("-", " ");
+    slug = slugify(slug, true);
     let postsArr = originalArr || filterPosts({ category: undefined });
-    return postsArr.filter((p: any) => p.title.toLowerCase() === slug)[0];
+    return postsArr.filter((p: any) => slugify(p.title.toLowerCase(), false, false) === slug)[0];
 };

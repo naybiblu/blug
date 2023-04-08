@@ -7,15 +7,11 @@ export const splitString = (str: string, size: number) => {
 };
 
 export const slugify = (str: string, url = false, urlify = true) => {
-  const regex = url ? /[^\w\s-]+/ : /[^\w\s]+/;
-  const strArr = [];
+  const regex = url ? /[^\w\s-]+/g : /[^\w\s]+/g;
   
   if (!regex.test(str)) return str;
   
-  for (var word of str.split(url ? "-" : " ")) {
-    if (!regex.test(word)) strArr.push(word);
-    else strArr.push("");
-  }
+  const result = str.replace(/[^\w\s-]+/g, '');
   
-  return urlify ? strArr.join(url ? "-" : " ").toLowerCase().replaceAll(" ", "-") : strArr.join(url ? "-" : " ");
+  return urlify ? result.join(url ? "-" : " ").toLowerCase().replaceAll(" ", "-") : result.join(url ? "-" : " ");
 };
